@@ -30,6 +30,14 @@ Make sure docker or podman(RHEL 8) is installed and running on your workstation
 
 EXAMPLE:
 # docker run -v /Users/ashworth/projects/community-automation:/community-automation -v ~/.ssh:/root/.ssh -i -t quay.io/rayashworth/community-ansible:latest
+
+# docker ps
+EXAMPLE output:
+CONTAINER ID   IMAGE                                          COMMAND       CREATED              STATUS              PORTS     NAMES
+8827819f8335   quay.io/rayashworth/community-ansible:latest   "/bin/bash"   About a minute ago   Up About a minute             fervent_satosh
+
+then use the first 3 digits of ID, then do:
+# docker exec -it 882  /bin/bash
 ```
 
 ### Calling with playbook, assumes all vars are set in vars files, exits the container when complete
